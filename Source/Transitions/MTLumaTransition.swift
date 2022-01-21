@@ -14,7 +14,7 @@ public class MTLumaTransition: MTTransition {
     
     override var samplers: [String : String] {
         return [
-            "luma": "spiral-1.png"
+            "luma": "\(self.imgName).png"
         ]
     }
 }

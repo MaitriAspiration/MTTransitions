@@ -22,7 +22,7 @@ public class MTDisplacementTransition: MTTransition {
     
     override var samplers: [String : String] {
         return [
-            "displacementMap": "displacementMap.jpg"
+            "displacementMap": "\(self.imgName).png"
         ]
     }
 }

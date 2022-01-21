@@ -100,7 +100,7 @@ public class MTMovieMaker: NSObject {
                             effects: [MTTransition.Effect],
                             frameDuration: TimeInterval = 1,
                             transitionDuration: TimeInterval = 0.8,
-                            audioURL: URL? = nil,
+                            audioURL: URL? = nil, lumaImage: String? = "square",
                             completion: MTMovieMakerCompletion? = nil) throws {
         
         guard images.count >= 2 else {
@@ -115,11 +115,29 @@ public class MTMovieMaker: NSObject {
         
         writer = try AVAssetWriter(outputURL: outputURL, fileType: .mp4)
         let outputSize = images.first!.size
-        let videoSettings: [String: Any] = [
-            AVVideoCodecKey: AVVideoCodecH264,
-            AVVideoWidthKey: outputSize.width,
-            AVVideoHeightKey: outputSize.height
-        ]
+
+        let newPixel: Double = Double(outputSize.width*outputSize.height)
+        let bitsPerPixel = pow(2.0, 25.0)
+        let bitRate = newPixel * bitsPerPixel
+        
+        var videoSettings: [String : Any] = [:]
+
+        if #available(iOS 11.0, *) {
+            videoSettings = [
+                AVVideoCodecKey : AVVideoCodecType.h264,
+                AVVideoWidthKey : outputSize.width,
+                AVVideoHeightKey : outputSize.height,
+                AVVideoCompressionPropertiesKey: [AVVideoAverageBitRateKey: bitRate, AVVideoMaxKeyFrameIntervalKey: (30), AVVideoExpectedSourceFrameRateKey: (30), AVVideoProfileLevelKey: AVVideoProfileLevelH264HighAutoLevel]
+            ]
+        } else {
+            videoSettings = [
+                AVVideoCodecKey : AVVideoCodecH264,
+                AVVideoWidthKey : outputSize.width,
+                AVVideoHeightKey : outputSize.height,
+                AVVideoCompressionPropertiesKey: [AVVideoAverageBitRateKey: bitRate, AVVideoMaxKeyFrameIntervalKey: (30), AVVideoExpectedSourceFrameRateKey: (30), AVVideoProfileLevelKey: AVVideoProfileLevelH264HighAutoLevel]
+            ]
+        }
+
         let writerInput = AVAssetWriterInput(mediaType: .video, outputSettings: videoSettings)
         let attributes = sourceBufferAttributes(outputSize: outputSize)
         let pixelBufferAdaptor = AVAssetWriterInputPixelBufferAdaptor(assetWriterInput: writerInput,
@@ -142,8 +160,9 @@ public class MTMovieMaker: NSObject {
                 let transition = effects[index].transition
                 transition.inputImage = images[index]
                 transition.destImage = images[index + 1]
-                transition.duration = transitionDuration
-                
+                transition.duration = effects[index].transition.duration
+                transition.imgName = lumaImage ?? "square"
+
                 let frameBeginTime = presentTime
                 let frameCount = 29
                 for counter in 0 ... frameCount {

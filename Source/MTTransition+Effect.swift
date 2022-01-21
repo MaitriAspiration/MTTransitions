@@ -90,7 +90,11 @@ extension MTTransition {
         case wipeRight
         case wipeUp
         case zoomInCircles
-        
+        case swipeLeft
+        case ZoomLeftWipe
+        case zoomRightWipe
+        case coordFormIn
+
         public var transition: MTTransition {
             switch self {
             case .none: return MTNoneTransition()
@@ -167,6 +171,10 @@ extension MTTransition {
             case .wipeRight: return MTWipeRightTransition()
             case .wipeUp: return MTWipeUpTransition()
             case .zoomInCircles: return MTZoomInCirclesTransition()
+            case .swipeLeft : return MTSwipeLeftTransition()
+            case .ZoomLeftWipe: return MTZoomLeftWipeTransition()
+            case .zoomRightWipe: return MTZoomRightWipeTransition()
+            case .coordFormIn: return MTCoordFormInTransition()
             }
         }
         
@@ -246,6 +254,10 @@ extension MTTransition {
             case .wipeRight: return "WipeRight"
             case .wipeUp: return "WipeUp"
             case .zoomInCircles: return "ZoomInCircles"
+            case .swipeLeft: return "SwipeLeft"
+            case .ZoomLeftWipe: return "ZoomLeftWipe"
+            case .zoomRightWipe: return "ZoomRightWipe"
+            case .coordFormIn: return "CoordFormIn"
             }
         }
     }

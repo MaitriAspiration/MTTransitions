@@ -27,7 +27,8 @@ public class MTTransition: NSObject, MTIUnaryFilter {
     public var outputPixelFormat: MTLPixelFormat = .invalid
     
     public var progress: Float = 0.0
-    
+    public var imgName: String = "square"
+
     /// The duration of the transition. 1.2 second by default.
     public var duration: TimeInterval = 1.2
     
