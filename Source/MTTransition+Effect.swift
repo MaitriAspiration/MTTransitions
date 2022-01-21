@@ -94,6 +94,8 @@ extension MTTransition {
         case ZoomLeftWipe
         case zoomRightWipe
         case coordFormIn
+        case scaleIn
+        case ScaleFade
 
         public var transition: MTTransition {
             switch self {
@@ -175,6 +177,8 @@ extension MTTransition {
             case .ZoomLeftWipe: return MTZoomLeftWipeTransition()
             case .zoomRightWipe: return MTZoomRightWipeTransition()
             case .coordFormIn: return MTCoordFormInTransition()
+            case .scaleIn: return MTScaleTransition()
+            case .ScaleFade: return MTScaleFadeTransition()
             }
         }
         
@@ -258,6 +262,8 @@ extension MTTransition {
             case .ZoomLeftWipe: return "ZoomLeftWipe"
             case .zoomRightWipe: return "ZoomRightWipe"
             case .coordFormIn: return "CoordFormIn"
+            case .scaleIn: return "ScaleIn"
+            case .ScaleFade: return "ScaleFade"
             }
         }
     }
