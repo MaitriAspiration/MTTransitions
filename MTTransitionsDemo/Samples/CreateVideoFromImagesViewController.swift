@@ -70,9 +70,9 @@ class CreateVideoFromImagesViewController: UIViewController {
             }
         }
         let effects: [MTTransition.Effect] = [
-            .circleOpen, .circleCrop, .none,
-            .crossZoom, .dreamy, .rotateScaleFade,
-            .wipeDown, .wipeUp]
+            .ScaleFade, .ScaleFade, .ScaleFade,
+            .ScaleFade, .ScaleFade, .ScaleFade,
+            .ScaleFade, .ScaleFade]
         
         let audioURL = Bundle.main.url(forResource: "audio2", withExtension: "mp3")
         //let audioURL = Bundle.main.url(forResource: "audio1", withExtension: "mp3")
@@ -80,7 +80,7 @@ class CreateVideoFromImagesViewController: UIViewController {
         let fileURL = URL(fileURLWithPath: path)
         movieMaker = MTMovieMaker(outputURL: fileURL)
         do {
-            try movieMaker?.createVideo(with: images, effects: effects, audioURL: audioURL) { [weak self] result in
+            try movieMaker?.createVideo(with: images, effects: effects, frameDuration: 2.0, transitionDuration: 1.9, audioURL: audioURL) { [weak self] result in
                 guard let self = self else { return }
                 switch result {
                 case .success(let url):

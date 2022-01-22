@@ -55,7 +55,6 @@ extension MTTransition {
         case kaleidoScope
         case leftRight
         case linearBlur
-        case luma
         case luminanceMelt
         case morph
         case mosaic
@@ -96,6 +95,15 @@ extension MTTransition {
         case coordFormIn
         case scaleIn
         case ScaleFade
+        case BiLinear
+        case ConicalAsym
+        case ConicalSym
+        case LinearAawtoothLateral
+        case RadialTriLateral
+        case Spiral1
+        case Spiral2
+        case Spiral3
+        case Square
 
         public var transition: MTTransition {
             switch self {
@@ -138,7 +146,6 @@ extension MTTransition {
             case .kaleidoScope: return MTKaleidoScopeTransition()
             case .leftRight: return MTLeftRightTransition()
             case .linearBlur: return MTLinearBlurTransition()
-            case .luma: return MTLumaTransition()
             case .luminanceMelt: return MTLuminanceMeltTransition()
             case .morph: return MTMorphTransition()
             case .mosaic: return MTMosaicTransition()
@@ -179,6 +186,15 @@ extension MTTransition {
             case .coordFormIn: return MTCoordFormInTransition()
             case .scaleIn: return MTScaleTransition()
             case .ScaleFade: return MTScaleFadeTransition()
+            case .BiLinear: return MTLumaTransition()
+            case .ConicalAsym: return MTLumaTransition()
+            case .ConicalSym: return MTLumaTransition()
+            case .LinearAawtoothLateral: return MTLumaTransition()
+            case .RadialTriLateral: return  MTLumaTransition()
+            case .Spiral1: return MTLumaTransition()
+            case .Spiral2: return MTLumaTransition()
+            case .Spiral3: return MTLumaTransition()
+            case .Square: return MTLumaTransition()
             }
         }
         
@@ -223,7 +239,6 @@ extension MTTransition {
             case .kaleidoScope: return "KaleidoScope"
             case .leftRight: return "LeftRight"
             case .linearBlur: return "LinearBlur"
-            case .luma: return "Luma"
             case .luminanceMelt: return "LuminanceMelt"
             case .morph: return "Morph"
             case .mosaic: return "Mosaic"
@@ -264,6 +279,16 @@ extension MTTransition {
             case .coordFormIn: return "CoordFormIn"
             case .scaleIn: return "ScaleIn"
             case .ScaleFade: return "ScaleFade"
+            case .BiLinear: return "BiLinear"
+            case .ConicalAsym: return "ConicalAsym"
+            case .ConicalSym: return "ConicalSym"
+            case .LinearAawtoothLateral: return "LinearLine"
+            case .RadialTriLateral: return  "Radial"
+            case .Spiral1: return "SingleSpiral"
+            case .Spiral2: return "SmallSpiral"
+            case .Spiral3: return "BigSpiral"
+            case .Square: return "Square"
+
             }
         }
     }
