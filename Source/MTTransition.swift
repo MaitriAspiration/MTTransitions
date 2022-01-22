@@ -35,7 +35,7 @@ public class MTTransition: NSObject, MTIUnaryFilter {
     var completion: MTTransitionCompletion?
     
     private var updater: MTTransitionUpdater?
-    private weak var driver: CADisplayLink?
+    private var driver: CADisplayLink?
     private var startTime: TimeInterval?
     
     // Subclasses must provide fragmentName
@@ -91,9 +91,9 @@ public class MTTransition: NSObject, MTIUnaryFilter {
         self.updater = updater
         self.completion = completion
         self.startTime = nil
-        let driver = CADisplayLink(target: self, selector: #selector(render(sender:)))
-        driver.add(to: .main, forMode: .common)
-        self.driver = driver
+        self.driver = CADisplayLink(target: self, selector: #selector(render(sender:)))
+        self.driver?.add(to: .main, forMode: .common)
+//        self.driver = driver
     }
     
     @objc private func render(sender: CADisplayLink) {
@@ -126,6 +126,9 @@ public class MTTransition: NSObject, MTIUnaryFilter {
     }
     
     public func cancel() {
+        self.startTime = nil
+        self.driver?.invalidate()
+        self.driver = nil
         self.completion?(false)
     }
 }

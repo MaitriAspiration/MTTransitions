@@ -100,10 +100,12 @@ extension MTTransition {
         case ConicalSym
         case LinearAawtoothLateral
         case RadialTriLateral
+        case RadialTriLateralReverse
         case Spiral1
         case Spiral2
         case Spiral3
         case Square
+        case RotateFade
 
         public var transition: MTTransition {
             switch self {
@@ -191,10 +193,12 @@ extension MTTransition {
             case .ConicalSym: return MTLumaTransition()
             case .LinearAawtoothLateral: return MTLumaTransition()
             case .RadialTriLateral: return  MTLumaTransition()
+            case .RadialTriLateralReverse: return MTLumaTransition()
             case .Spiral1: return MTLumaTransition()
             case .Spiral2: return MTLumaTransition()
             case .Spiral3: return MTLumaTransition()
             case .Square: return MTLumaTransition()
+            case .RotateFade: return MTRotateFadeTransition()
             }
         }
         
@@ -284,11 +288,12 @@ extension MTTransition {
             case .ConicalSym: return "ConicalSym"
             case .LinearAawtoothLateral: return "LinearLine"
             case .RadialTriLateral: return  "Radial"
+            case .RadialTriLateralReverse: return "RadialReverse"
             case .Spiral1: return "SingleSpiral"
             case .Spiral2: return "SmallSpiral"
             case .Spiral3: return "BigSpiral"
             case .Square: return "Square"
-
+            case .RotateFade: return "RotateFade"
             }
         }
     }
