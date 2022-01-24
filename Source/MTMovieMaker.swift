@@ -100,7 +100,7 @@ public class MTMovieMaker: NSObject {
                             effects: [MTTransition.Effect],
                             frameDuration: TimeInterval = 1,
                             transitionDuration: TimeInterval = 0.8,
-                            audioURL: URL? = nil, lumaImage: String? = "square",
+                            audioURL: URL? = nil,
                             completion: MTMovieMakerCompletion? = nil) throws {
         
         guard images.count >= 2 else {
@@ -161,7 +161,28 @@ public class MTMovieMaker: NSObject {
                 transition.inputImage = images[index]
                 transition.destImage = images[index + 1]
                 transition.duration = effects[index].transition.duration
-                transition.imgName = lumaImage ?? "square"
+                
+                if effects[index] == .BiLinear {
+                    transition.imgName = "bilinear-lateral"
+                } else if effects[index] == .ConicalAsym {
+                    transition.imgName = "conical-asym"
+                } else if effects[index] == .ConicalSym {
+                    transition.imgName = "conical-sym"
+                } else if effects[index] == .LinearAawtoothLateral {
+                    transition.imgName = "linear-sawtooth-lateral-4"
+                } else if effects[index] == .RadialTriLateral {
+                    transition.imgName = "radial-tri-lateral-4"
+                } else if effects[index] == .RadialTriLateralReverse {
+                    transition.imgName = "radial-tri-lateral-5"
+                } else if effects[index] == .Spiral1 {
+                    transition.imgName = "spiral-1"
+                } else if effects[index] == .Spiral2 {
+                    transition.imgName = "spiral-2"
+                } else if effects[index] == .Spiral3 {
+                    transition.imgName = "spiral-3"
+                } else if effects[index] == .Square {
+                    transition.imgName = "square"
+                }
 
                 let frameBeginTime = presentTime
                 let frameCount = 29

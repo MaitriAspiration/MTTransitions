@@ -42,6 +42,7 @@ extension MTTransition {
         case doomScreen
         case doorway
         case dreamy
+        case dreamyZoom
         case fadeColor
         case fadegrayscale
         case fade
@@ -135,6 +136,7 @@ extension MTTransition {
             case .doomScreen: return MTDoomScreenTransition()
             case .doorway: return MTDoorwayTransition()
             case .dreamy: return MTDreamyTransition()
+            case .dreamyZoom: return MTDreamyZoomTransition()
             case .fadeColor: return MTFadeColorTransition()
             case .fadegrayscale: return MTFadegrayscaleTransition()
             case .fade: return MTFadeTransition()
@@ -230,6 +232,7 @@ extension MTTransition {
             case .doomScreen: return "DoomScreen"
             case .doorway: return "Doorway"
             case .dreamy: return "Dreamy"
+            case .dreamyZoom: return "DreamyZoom"
             case .fadeColor: return "FadeColor"
             case .fadegrayscale: return "Fadegrayscale"
             case .fade: return "Fade"
