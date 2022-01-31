@@ -35,9 +35,8 @@ public class MTTransition: NSObject, MTIUnaryFilter {
     var completion: MTTransitionCompletion?
     
     private var updater: MTTransitionUpdater?
-    private var driver: CADisplayLink?
-    private var startTime: TimeInterval?
-    
+    var displayTime:Double = 0.0
+
     // Subclasses must provide fragmentName
     var fragmentName: String { return "" }
     var parameters: [String: Any] { return [:] }
@@ -90,45 +89,28 @@ public class MTTransition: NSObject, MTIUnaryFilter {
         self.destImage = toImage
         self.updater = updater
         self.completion = completion
-        self.startTime = nil
-        self.driver = CADisplayLink(target: self, selector: #selector(render(sender:)))
-        self.driver?.add(to: .main, forMode: .common)
-//        self.driver = driver
     }
-    
-    @objc private func render(sender: CADisplayLink) {
-        let startTime: CFTimeInterval
-        if let time = self.startTime {
-            startTime = time
-        } else {
-            startTime = sender.timestamp
-            self.startTime = startTime
-        }
         
-        let progress = (sender.timestamp - startTime) / duration
-        if progress > 1 {
+    public func timerFired(displayTime: Double, isStop: Bool) {
+        self.displayTime = displayTime
+        if displayTime > 1 {
             self.progress = 1.0
             if let image = outputImage {
                 self.updater?(image)
             }
-            self.driver?.invalidate()
-            self.driver = nil
             self.updater = nil
             self.completion?(true)
             self.completion = nil
             return
-        }
-        
-        self.progress = Float(progress)
-        if let image = outputImage {
-            self.updater?(image)
+        } else {
+            self.progress = Float(self.displayTime)
+            if let image = outputImage {
+                self.updater?(image)
+            }
         }
     }
     
     public func cancel() {
-        self.startTime = nil
-        self.driver?.invalidate()
-        self.driver = nil
         self.completion?(false)
     }
 }
