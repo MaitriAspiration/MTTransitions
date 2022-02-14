@@ -45,7 +45,6 @@ extension MTTransition {
         case dreamyZoom
         case fadeColor
         case fadegrayscale
-        case fade
         case flyeye
         case glitchDisplace
         case glitchMemories
@@ -110,7 +109,7 @@ extension MTTransition {
 
         public var transition: MTTransition {
             switch self {
-            case .none: return MTNoneTransition()
+            case .none: return MTFadeTransition()
             case .angular: return MTAngularTransition()
             case .bounce: return MTBounceTransition()
             case .bowTieHorizontal: return MTBowTieHorizontalTransition()
@@ -139,7 +138,6 @@ extension MTTransition {
             case .dreamyZoom: return MTDreamyZoomTransition()
             case .fadeColor: return MTFadeColorTransition()
             case .fadegrayscale: return MTFadegrayscaleTransition()
-            case .fade: return MTFadeTransition()
             case .flyeye: return MTFlyeyeTransition()
             case .glitchDisplace: return MTGlitchDisplaceTransition()
             case .glitchMemories: return MTGlitchMemoriesTransition()
@@ -235,7 +233,6 @@ extension MTTransition {
             case .dreamyZoom: return "DreamyZoom"
             case .fadeColor: return "FadeColor"
             case .fadegrayscale: return "Fadegrayscale"
-            case .fade: return "Fade"
             case .flyeye: return "Flyeye"
             case .glitchDisplace: return "GlitchDisplace"
             case .glitchMemories: return "GlitchMemories"
