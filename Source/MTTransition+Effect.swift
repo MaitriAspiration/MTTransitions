@@ -23,6 +23,10 @@ extension MTTransition {
         case bowTieVertical
         case burn
         case butterflyWaveScrawler
+        case BiLinear
+        case coordFormIn
+        case ConicalAsym
+        case ConicalSym
         case cannabisleaf
         case circle
         case circleCrop
@@ -56,6 +60,7 @@ extension MTTransition {
         case leftRight
         case linearBlur
         case luminanceMelt
+        case LinearAawtoothLateral
         case morph
         case mosaic
         case multiplyBlend
@@ -70,12 +75,22 @@ extension MTTransition {
         case ripple
         case rotate
         case rotateScaleFade
+        case RadialTriLateral
+        case RadialTriLateralReverse
+        case RotateFade
         case simpleZoom
         case squaresWire
         case squeeze
         case stereoViewer
         case swap
         case swirl
+        case scaleIn
+        case ScaleFade
+        case Spiral1
+        case Spiral2
+        case Spiral3
+        case Square
+        case swipeLeft
         case tangentMotionBlur
         case topBottom
         case tvStatic
@@ -89,23 +104,8 @@ extension MTTransition {
         case wipeRight
         case wipeUp
         case zoomInCircles
-        case swipeLeft
         case ZoomLeftWipe
         case zoomRightWipe
-        case coordFormIn
-        case scaleIn
-        case ScaleFade
-        case BiLinear
-        case ConicalAsym
-        case ConicalSym
-        case LinearAawtoothLateral
-        case RadialTriLateral
-        case RadialTriLateralReverse
-        case Spiral1
-        case Spiral2
-        case Spiral3
-        case Square
-        case RotateFade
 
         public var transition: MTTransition {
             switch self {
@@ -116,6 +116,10 @@ extension MTTransition {
             case .bowTieVertical: return MTBowTieVerticalTransition()
             case .burn: return MTBurnTransition()
             case .butterflyWaveScrawler: return MTButterflyWaveScrawlerTransition()
+            case .BiLinear: return MTLumaTransition()
+            case .coordFormIn: return MTCoordFormInTransition()
+            case .ConicalAsym: return MTLumaTransition()
+            case .ConicalSym: return MTLumaTransition()
             case .cannabisleaf: return MTCannabisleafTransition()
             case .circle: return MTCircleTransition()
             case .circleCrop: return MTCircleCropTransition()
@@ -185,12 +189,8 @@ extension MTTransition {
             case .swipeLeft : return MTSwipeLeftTransition()
             case .ZoomLeftWipe: return MTZoomLeftWipeTransition()
             case .zoomRightWipe: return MTZoomRightWipeTransition()
-            case .coordFormIn: return MTCoordFormInTransition()
             case .scaleIn: return MTScaleTransition()
             case .ScaleFade: return MTScaleFadeTransition()
-            case .BiLinear: return MTLumaTransition()
-            case .ConicalAsym: return MTLumaTransition()
-            case .ConicalSym: return MTLumaTransition()
             case .LinearAawtoothLateral: return MTLumaTransition()
             case .RadialTriLateral: return  MTLumaTransition()
             case .RadialTriLateralReverse: return MTLumaTransition()
@@ -287,13 +287,108 @@ extension MTTransition {
             case .ConicalAsym: return "ConicalAsym"
             case .ConicalSym: return "ConicalSym"
             case .LinearAawtoothLateral: return "LinearLine"
-            case .RadialTriLateral: return  "Radial"
+            case .RadialTriLateral: return  "RadialCurv"
             case .RadialTriLateralReverse: return "RadialReverse"
             case .Spiral1: return "SingleSpiral"
             case .Spiral2: return "SmallSpiral"
             case .Spiral3: return "BigSpiral"
             case .Square: return "Square"
             case .RotateFade: return "RotateFade"
+            }
+        }
+        
+        public var image: String {
+            switch self {
+            case .none: return "ic_fade"
+            case .angular: return "ic_angular"
+            case .bounce: return "ic_bounce"
+            case .bowTieHorizontal: return "ic_bow_horizontal"
+            case .bowTieVertical: return "ic_bowvertical"
+            case .burn: return "ic_burn"
+            case .butterflyWaveScrawler: return "ic_but...scrawler"
+            case .cannabisleaf: return "ic_cannabisleaf"
+            case .circle: return "ic_circle"
+            case .circleCrop: return "ic_circlecrop"
+            case .circleOpen: return "ic_circleopen"
+            case .colorPhase: return "ic_colorphase"
+            case .colourDistance: return "ic_colourdistance"
+            case .crazyParametricFun: return "ic_crazy..tricfun"
+            case .crossHatch: return "ic_crosshatch"
+            case .crossWarp: return "ic_crosswarp"
+            case .crossZoom: return "ic_crosszoom"
+            case .cube: return "ic_cube"
+            case .directional: return "ic_directional"
+            case .directionalEasing: return "ic_direc...easing"
+            case .directionalWarp: return "ic_directi..warp"
+            case .directionalWipe: return "ic_directi..wipe"
+            case .displacement: return "ic_displacement"
+            case .doomScreen: return "ic_doomScreen"
+            case .doorway: return "ic_doorway"
+            case .dreamy: return "ic_dreamy"
+            case .dreamyZoom: return "ic_dreamyzoom"
+            case .fadeColor: return "ic_fadecolor"
+            case .fadegrayscale: return "ic_fadegrayscale"
+            case .flyeye: return "ic_flyeye"
+            case .glitchDisplace: return "ic_glitchdisplace"
+            case .glitchMemories: return "ic_glitchmemories"
+            case .gridFlip: return "ic_gridflip"
+            case .heart: return "ic_heart"
+            case .hexagonalize: return "ic_hexagonalize"
+            case .invertedPageCurl: return "ic_invertedpage_curl"
+            case .kaleidoScope: return "ic_kaleidoscope"
+            case .leftRight: return "ic_leftright"
+            case .linearBlur: return "ic_linearblur"
+            case .luminanceMelt: return "ic_luminancemelt"
+            case .morph: return "ic_morph"
+            case .mosaic: return "ic_mosaic"
+            case .multiplyBlend: return "ic_multiply_blend"
+            case .perlin: return "ic_perlin"
+            case .pinwheel: return "ic_pinwheel"
+            case .pixelize: return "ic_pixelize"
+            case .polarFunction: return "ic_polar_function"
+            case .polkaDotsCurtain: return "ic_polka..curtain"
+            case .radial: return "ic_radial_2"
+            case .randomNoisex: return "ic_random_noisex"
+            case .randomSquares: return "ic_random_squares"
+            case .ripple: return "ic_ripple"
+            case .rotate: return "ic_rotate"
+            case .rotateScaleFade: return "ic_rotatescalefade"
+            case .simpleZoom: return "ic_simplezoom"
+            case .squaresWire: return "ic_squareswire"
+            case .squeeze: return "ic_squeeze"
+            case .stereoViewer: return "ic_stereoviewer"
+            case .swap: return "ic_swap"
+            case .swirl: return "ic_swirl"
+            case .tangentMotionBlur: return "ic_tang..motionblur"
+            case .topBottom: return "ic_topbottom"
+            case .tvStatic: return "ic_tvstatic"
+            case .undulatingBurnOut: return "ic_undu.._burn_out"
+            case .waterDrop: return "ic_water_drop"
+            case .windowSlice: return "ic_window_slice"
+            case .windowBlinds: return "ic_window_blinds"
+            case .wind: return "ic_wind"
+            case .wipeDown: return "ic_wipe_down"
+            case .wipeLeft: return "ic_wipe_left"
+            case .wipeRight: return "ic_wipe_right"
+            case .wipeUp: return "ic_wipe_up"
+            case .zoomInCircles: return "ic_zoomIn_circles"
+            case .swipeLeft: return "ic_swipe_left"
+            case .ZoomLeftWipe: return "ic_zoom_left_wipe"
+            case .zoomRightWipe: return "ic_zoom_right_wipe"
+            case .coordFormIn: return "ic_coord_formIn"
+            case .scaleIn: return "ic_scale_in"
+            case .ScaleFade: return "ic_scale_fade"
+            case .BiLinear: return "ic_bi_linear"
+            case .ConicalAsym: return "ic_conical_asym"
+            case .ConicalSym: return "ic_conical_sym"
+            case .LinearAawtoothLateral: return "ic_linear_line"
+            case .RadialTriLateral: return  "ic_radial"
+            case .RadialTriLateralReverse: return "ic_radial_reverse"
+            case .Spiral1: return "ic_single_spiral"
+            case .Spiral2: return "ic_small_spiral"
+            case .Spiral3: return "ic_big_spiral"
+            case .Square: return "ic_square"
+            case .RotateFade: return "ic_rotate_fade"
             }
         }
     }
