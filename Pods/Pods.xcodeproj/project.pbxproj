@@ -223,6 +223,8 @@
 		874CD049929E671303CE3E52FA1428A5 /* MTUndulatingBurnOutTransition.metal in Sources */ = {isa = PBXBuildFile; fileRef = 4D15569FA50C725CD70D42119E004BE1 /* MTUndulatingBurnOutTransition.metal */; };
 		87A3DA692D97E08D38F205DC8831236A /* MTPerlinTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF081D335407F34024354A5212F65F8F /* MTPerlinTransition.swift */; };
 		87C029398AF1A077C6755F81858C6E14 /* MTIContext.h in Headers */ = {isa = PBXBuildFile; fileRef = C294832C51D7D6D6CE61F77491C18BB5 /* MTIContext.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		88300C4D27FDC0FA00255FA7 /* MTPowerKaleidoTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88300C4B27FDC0FA00255FA7 /* MTPowerKaleidoTransition.swift */; };
+		88300C4E27FDC0FA00255FA7 /* MTPowerKaleidoTransition.metal in Sources */ = {isa = PBXBuildFile; fileRef = 88300C4C27FDC0FA00255FA7 /* MTPowerKaleidoTransition.metal */; };
 		8837DC43279C152200498CD6 /* MTRotateFadeTransition.metal in Sources */ = {isa = PBXBuildFile; fileRef = 8837DC42279C152200498CD6 /* MTRotateFadeTransition.metal */; };
 		8837DC45279C153200498CD6 /* MTRotateFadeTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8837DC44279C153200498CD6 /* MTRotateFadeTransition.swift */; };
 		886F53BE279ACB9E00F8E22E /* MTCoordFormInTransition.metal in Sources */ = {isa = PBXBuildFile; fileRef = 886F53BD279ACB9E00F8E22E /* MTCoordFormInTransition.metal */; };
@@ -653,6 +655,8 @@
 		8702A410B9EEA7485A1E0FA09D5960DF /* MTCircleCropTransition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MTCircleCropTransition.swift; sourceTree = "<group>"; };
 		87BE676E4672F0308158D1EE82F61066 /* MTIContext.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MTIContext.m; path = Frameworks/MetalPetal/MTIContext.m; sourceTree = "<group>"; };
 		880C2C1908D6B2A3D00485EE88CD2F62 /* MTWindowSliceTransition.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; path = MTWindowSliceTransition.metal; sourceTree = "<group>"; };
+		88300C4B27FDC0FA00255FA7 /* MTPowerKaleidoTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MTPowerKaleidoTransition.swift; sourceTree = "<group>"; };
+		88300C4C27FDC0FA00255FA7 /* MTPowerKaleidoTransition.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = MTPowerKaleidoTransition.metal; sourceTree = "<group>"; };
 		8837DC42279C152200498CD6 /* MTRotateFadeTransition.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = MTRotateFadeTransition.metal; sourceTree = "<group>"; };
 		8837DC44279C153200498CD6 /* MTRotateFadeTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MTRotateFadeTransition.swift; sourceTree = "<group>"; };
 		885626F8E2A98A3ABD8264B5216CD1AB /* MTCircleTransition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MTCircleTransition.swift; sourceTree = "<group>"; };
@@ -1143,6 +1147,8 @@
 		7C89C47EC5224819604F6BF3A7FDE6D5 /* Transitions */ = {
 			isa = PBXGroup;
 			children = (
+				88300C4C27FDC0FA00255FA7 /* MTPowerKaleidoTransition.metal */,
+				88300C4B27FDC0FA00255FA7 /* MTPowerKaleidoTransition.swift */,
 				B1B566E90D86841E7797877B5F50619E /* MTAngularTransition.metal */,
 				1CDC7D85A922BCC8D901DE80BDC9CCAF /* MTAngularTransition.swift */,
 				680D50656D2DF001C179859BD53A94CB /* MTBounceTransition.metal */,
@@ -1870,6 +1876,7 @@
 				DC6B55A576342D3B345B9F4075D881D2 /* MTFadegrayscaleTransition.metal in Sources */,
 				2AAA4726CD648E4937ABB26589654F9B /* MTFadegrayscaleTransition.swift in Sources */,
 				6A193D9A0EC2154D258358109563E65C /* MTFadeTransition.metal in Sources */,
+				88300C4D27FDC0FA00255FA7 /* MTPowerKaleidoTransition.swift in Sources */,
 				886F53C6279ACD5900F8E22E /* MTSwipeLeftTransition.swift in Sources */,
 				D5AAD27EE4B6E7C54DD2B70A662ED0D2 /* MTFadeTransition.swift in Sources */,
 				8837DC45279C153200498CD6 /* MTRotateFadeTransition.swift in Sources */,
@@ -1964,6 +1971,7 @@
 				02AEB863C85174B97E3B350605B56A16 /* MTVideoTransitionRenderer.swift in Sources */,
 				40C929445CBB0B3402BB444CD0A31ACB /* MTViewControllerTransition.swift in Sources */,
 				2491C1B7310515E6097C7D285F20375C /* MTWaterDropTransition.metal in Sources */,
+				88300C4E27FDC0FA00255FA7 /* MTPowerKaleidoTransition.metal in Sources */,
 				A1AAC9DD05F0E106112A9A1C37DB4ACB /* MTWaterDropTransition.swift in Sources */,
 				776B9F998205D569562A1943D9E01385 /* MTWindowBlindsTransition.metal in Sources */,
 				9E19AF84F612DEDF16A3F52C755868C8 /* MTWindowBlindsTransition.swift in Sources */,
