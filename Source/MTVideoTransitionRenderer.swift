@@ -33,6 +33,28 @@ public class MTVideoTransitionRenderer: NSObject {
         transition.destImage = backgroundImage.oriented(.downMirrored)
         transition.progress = tween
 
+        if effect == .BiLinear {
+            transition.imgName = "bilinear-lateral"
+        } else if effect == .ConicalAsym {
+            transition.imgName = "conical-asym"
+        } else if effect == .ConicalSym {
+            transition.imgName = "conical-sym"
+        } else if effect == .LinearAawtoothLateral {
+            transition.imgName = "linear-sawtooth-lateral-4"
+        } else if effect == .RadialTriLateral {
+            transition.imgName = "radial-tri-lateral-4"
+        } else if effect == .RadialTriLateralReverse {
+            transition.imgName = "radial-tri-lateral-5"
+        } else if effect == .Spiral1 {
+            transition.imgName = "spiral-1"
+        } else if effect == .Spiral2 {
+            transition.imgName = "spiral-2"
+        } else if effect == .Spiral3 {
+            transition.imgName = "spiral-3"
+        } else if effect == .Square {
+            transition.imgName = "square"
+        }
+
         if let output = transition.outputImage {
             try? MTTransition.context?.render(output, to: destinationPixelBuffer)
         }

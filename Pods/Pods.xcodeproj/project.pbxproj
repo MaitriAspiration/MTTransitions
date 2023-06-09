@@ -454,7 +454,7 @@
 		07A1A65F2EFAC9CE9DAC750BA87CE7DE /* MTWipeUpTransition.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; path = MTWipeUpTransition.metal; sourceTree = "<group>"; };
 		083FC04867E17A4F91FB6E7C54D0DDFA /* MTZoomInCirclesTransition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MTZoomInCirclesTransition.swift; sourceTree = "<group>"; };
 		0909D8FD90F546782B25F2FB893CD612 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		0A57956B5FFBDC5A98D9EF3E79151D51 /* MetalPetal */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MetalPetal; path = MetalPetal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0A57956B5FFBDC5A98D9EF3E79151D51 /* MetalPetal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MetalPetal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A8714DBF54E50FBB0EF68211FC901C8 /* MTIMPSHistogramFilter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MTIMPSHistogramFilter.m; path = Frameworks/MetalPetal/Filters/MTIMPSHistogramFilter.m; sourceTree = "<group>"; };
 		0B440B69A6DC349D5EAA26798C2D6258 /* MTIMPSBoxBlurFilter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MTIMPSBoxBlurFilter.m; path = Frameworks/MetalPetal/Filters/MTIMPSBoxBlurFilter.m; sourceTree = "<group>"; };
 		0C51A7CD743FC805E69B5D76204BEC1E /* MTSqueezeTransition.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; path = MTSqueezeTransition.metal; sourceTree = "<group>"; };
@@ -529,7 +529,7 @@
 		359B94F29828B4903C1F72387B170D0F /* MTGlitchDisplaceTransition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MTGlitchDisplaceTransition.swift; sourceTree = "<group>"; };
 		364B7E9748AC8A6F7964BF3C1FE72471 /* MetalPetal-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "MetalPetal-Info.plist"; sourceTree = "<group>"; };
 		36D8C10F3550B84AFE9F39E1889CCDEC /* MTKaleidoScopeTransition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MTKaleidoScopeTransition.swift; sourceTree = "<group>"; };
-		382E479E58BF4CD13DF452F83AD90F0A /* MTTransitions */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MTTransitions; path = MTTransitions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		382E479E58BF4CD13DF452F83AD90F0A /* MTTransitions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MTTransitions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3890FA391AA0F1B0CF94C3590780D9E1 /* MTTVStaticTransition.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; path = MTTVStaticTransition.metal; sourceTree = "<group>"; };
 		39E029A2906FF2BCD60B3D0565946EE3 /* MTIVector+SIMD.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "MTIVector+SIMD.m"; path = "Frameworks/MetalPetal/MTIVector+SIMD.m"; sourceTree = "<group>"; };
 		39EA02719B701D74C4476E840F7E190E /* BlendingShaders.metal */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.metal; name = BlendingShaders.metal; path = Frameworks/MetalPetal/Shaders/BlendingShaders.metal; sourceTree = "<group>"; };
@@ -1321,8 +1321,8 @@
 		83E2118DAD286A5971ADB3D4F1E4D19E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0A57956B5FFBDC5A98D9EF3E79151D51 /* MetalPetal */,
-				382E479E58BF4CD13DF452F83AD90F0A /* MTTransitions */,
+				0A57956B5FFBDC5A98D9EF3E79151D51 /* MetalPetal.framework */,
+				382E479E58BF4CD13DF452F83AD90F0A /* MTTransitions.framework */,
 				B093FDBF12C96B91A755B5E69C18C0E7 /* Pods-MTTransitionsDemo */,
 			);
 			name = Products;
@@ -1587,7 +1587,7 @@
 			);
 			name = MTTransitions;
 			productName = MTTransitions;
-			productReference = 382E479E58BF4CD13DF452F83AD90F0A /* MTTransitions */;
+			productReference = 382E479E58BF4CD13DF452F83AD90F0A /* MTTransitions.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		7F355BCE304D7B26CA68856559D7FF90 /* Pods-MTTransitionsDemo */ = {
@@ -1625,7 +1625,7 @@
 			);
 			name = MetalPetal;
 			productName = MetalPetal;
-			productReference = 0A57956B5FFBDC5A98D9EF3E79151D51 /* MetalPetal */;
+			productReference = 0A57956B5FFBDC5A98D9EF3E79151D51 /* MetalPetal.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -2040,7 +2040,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/MetalPetal/MetalPetal-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2076,7 +2076,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/MTTransitions/MTTransitions-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/MTTransitions/MTTransitions-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2173,7 +2173,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/MetalPetal/MetalPetal-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2312,7 +2312,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/MTTransitions/MTTransitions-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/MTTransitions/MTTransitions-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

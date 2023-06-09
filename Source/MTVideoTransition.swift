@@ -57,9 +57,10 @@ public class MTVideoTransition: NSObject {
     public func merge(_ assets: [AVAsset],
                       effect: MTTransition.Effect,
                       transitionDuration: CMTime,
+                      size: CGSize,
                       completion: @escaping MTVideoTransitionCompletion) throws {
         let effects = Array(repeating: effect, count: assets.count - 1)
-        try merge(assets, effects: effects, transitionDuration:transitionDuration, completion: completion)
+        try merge(assets, effects: effects, transitionDuration:transitionDuration, size: size, completion: completion)
     }
     
     /// Merge videos with transtions
@@ -72,6 +73,7 @@ public class MTVideoTransition: NSObject {
     public func merge(_ assets: [AVAsset],
                       effects: [MTTransition.Effect],
                       transitionDuration: CMTime,
+                      size: CGSize,
                       completion: @escaping MTVideoTransitionCompletion) throws {
         
         guard assets.count >= 2 else {
