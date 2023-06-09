@@ -110,7 +110,7 @@ public class MTVideoTransition: NSObject {
         transitionTimeRanges = Array(repeating: timeRange, count: clips.count)
         
         let videoTracks = self.clips[0].tracks(withMediaType: .video)
-        let videoSize = videoTracks[0].naturalSize
+        let videoSize = size
         
         let composition = AVMutableComposition()
         composition.naturalSize = videoSize
