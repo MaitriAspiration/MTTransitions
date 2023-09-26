@@ -107,6 +107,40 @@ extension MTTransition {
         case zoomInCircles
         case ZoomLeftWipe
         case zoomRightWipe
+        case directionalScaled
+        case horizantalClose
+        case horizantalOpen
+        case verticalClose
+        case verticalOpen
+        case simpleZoomOut
+        case rectangleCrop
+        case rotateScaleVanish
+        case rotateScaleVanishReverse
+        case dissolve
+        case XTranslation
+        case SplitSlideInHorizontal
+        case SplitSlideInOutHorizontal
+        case SplitSlideInVertical
+        case SplitSlideInOutVertical
+        case SplitSlideOutHorizontal
+        case SplitSlideOutVertical
+        case AngleSlice
+        case Bar
+        case BokehBlend
+        case CirclePinchWarp
+        case DiagonalGlitch
+        case DotTrans
+        case FireWipe
+        case GrowingSquares
+        case RandomSlide
+        case AlanRipple
+        case SideNoise
+        case DispCurious
+        case DispCurious1
+        case DispCurious2
+        case DispCurious3
+        case DispCurious4
+        case AtmospericZoom
 
         public var transition: MTTransition {
             switch self {
@@ -133,6 +167,7 @@ extension MTTransition {
             case .crossZoom: return MTCrossZoomTransition()
             case .cube: return MTCubeTransition()
             case .directional: return MTDirectionalTransition()
+            case .directionalScaled: return MTDirectionalScaledTransition()
             case .directionalEasing: return MTDirectionalEasingTransition()
             case .directionalWarp: return MTDirectionalWarpTransition()
             case .directionalWipe: return MTDirectionalWipeTransition()
@@ -201,6 +236,39 @@ extension MTTransition {
             case .Spiral3: return MTLumaTransition()
             case .Square: return MTLumaTransition()
             case .RotateFade: return MTRotateFadeTransition()
+            case .horizantalClose: return MTHorizantalCloseTransition()
+            case .horizantalOpen: return MTHorizantalOpenTransition()
+            case .verticalClose: return MTVerticalCloseTransition()
+            case .verticalOpen: return MTVerticalOpenTransition()
+            case .simpleZoomOut: return MTSimpleZoomOutTransition()
+            case .rectangleCrop: return MTRectangleCropTransition()
+            case .rotateScaleVanish: return MTRotateScaleVanishTransition()
+            case .rotateScaleVanishReverse: return MTRotateScaleVanishReverseTransition()
+            case .dissolve: return MTDissolveTransition()
+            case .XTranslation: return MTXTranslationTransition()
+            case .SplitSlideInHorizontal: return MTSplitSlideInHorizontalTransition()
+            case .SplitSlideInOutHorizontal: return MTSplitSlideInOutHorizontalTransition()
+            case .SplitSlideInVertical: return MTSplitSlideInVerticalTransition()
+            case .SplitSlideInOutVertical: return MTSplitSlideInOutVerticalTransition()
+            case .SplitSlideOutHorizontal: return MTSplitSlideOutHorizontalTransition()
+            case .SplitSlideOutVertical: return MTSplitSlideOutVerticalTransition()
+            case .AngleSlice: return MTAngleSliceTransition()
+            case .Bar: return MTBarTransition()
+            case .BokehBlend: return MTBokehBlendTransition()
+            case .CirclePinchWarp: return MTCirclePinchWarpTransition()
+            case .DiagonalGlitch: return MTDiagonalGlitchTransition()
+            case .DotTrans: return MTDotTransition()
+            case .FireWipe: return MTFireWipeTransition()
+            case .GrowingSquares: return MTGrowingSquaresTransition()
+            case .RandomSlide: return MTRandomSlideTransition()
+            case .AlanRipple: return MTAlanRippleTransition()
+            case .SideNoise: return MTSideNoiseTransition()
+            case .DispCurious: return MTLumaTransition()
+            case .DispCurious1: return MTLumaTransition()
+            case .DispCurious2: return MTLumaTransition()
+            case .DispCurious3: return MTLumaTransition()
+            case .DispCurious4: return MTLumaTransition()
+            case .AtmospericZoom: return MTAtmospericZoomTransition()
             }
         }
         
@@ -225,6 +293,7 @@ extension MTTransition {
             case .crossZoom: return "CrossZoom"
             case .cube: return "Cube"
             case .directional: return "Directional"
+            case .directionalScaled: return "DirectionalScaled"
             case .directionalEasing: return "DirectionalEasing"
             case .directionalWarp: return "DirectionalWarp"
             case .directionalWipe: return "DirectionalWipe"
@@ -297,6 +366,39 @@ extension MTTransition {
             case .Spiral3: return "BigSpiral"
             case .Square: return "Square"
             case .RotateFade: return "RotateFade"
+            case .horizantalClose: return "HorizantalClose"
+            case .horizantalOpen: return "HorizantalOpen"
+            case .verticalClose: return "VerticalClose"
+            case .verticalOpen: return "VerticalClose"
+            case .simpleZoomOut: return "SimpleZoomOut"
+            case .rectangleCrop: return "RectangleCrop"
+            case .rotateScaleVanish: return "RotateScaleVanish"
+            case .rotateScaleVanishReverse: return "RotateScaleVanishReverse"
+            case .dissolve: return "Dissolve"
+            case .XTranslation: return "XTranslation"
+            case .SplitSlideInHorizontal: return "SplitSlideInHorizontal"
+            case .SplitSlideInOutHorizontal: return "SplitSlideInOutHorizontal"
+            case .SplitSlideInVertical: return "SplitSlideInVertical"
+            case .SplitSlideInOutVertical: return "SplitSlideInOutVertical"
+            case .SplitSlideOutHorizontal: return "SplitSlideOutHorizontal"
+            case .SplitSlideOutVertical: return "SplitSlideOutVertical"
+            case .AngleSlice: return "AngleSlice"
+            case .Bar: return "Bar"
+            case .BokehBlend: return "BokehBlend"
+            case .CirclePinchWarp: return "CirclePinchWarp"
+            case .DiagonalGlitch: return "DiagonalGlitch"
+            case .DotTrans: return "DotTrans"
+            case .FireWipe: return "FireWipe"
+            case .GrowingSquares: return "GrowingSquares"
+            case .RandomSlide: return "RandomSlide"
+            case .AlanRipple: return "AlanRipple"
+            case .SideNoise: return "SideNoise"
+            case .DispCurious: return "DispCurious"
+            case .DispCurious1: return "DispCurious1"
+            case .DispCurious2: return "DispCurious2"
+            case .DispCurious3: return "DispCurious3"
+            case .DispCurious4: return "DispCurious4"
+            case .AtmospericZoom: return "AtmospericZoom"
             }
         }
         
@@ -321,6 +423,7 @@ extension MTTransition {
             case .crossZoom: return "ic_crosszoom"
             case .cube: return "ic_cube"
             case .directional: return "ic_directional"
+            case .directionalScaled: return "ic_directional"
             case .directionalEasing: return "ic_direc...easing"
             case .directionalWarp: return "ic_directi..warp"
             case .directionalWipe: return "ic_directi..wipe"
@@ -393,6 +496,39 @@ extension MTTransition {
             case .Spiral3: return "ic_big_spiral"
             case .Square: return "ic_square"
             case .RotateFade: return "ic_rotate_fade"
+            case .horizantalClose: return "ic_rotate_fade"
+            case .horizantalOpen: return "ic_rotate_fade"
+            case .verticalClose: return "ic_rotate_fade"
+            case .verticalOpen: return "ic_rotate_fade"
+            case .simpleZoomOut: return "ic_rotate_fade"
+            case .rectangleCrop: return "ic_rotate_fade"
+            case .rotateScaleVanish: return "ic_rotate_fade"
+            case .rotateScaleVanishReverse: return "ic_rotate_fade"
+            case .dissolve: return "ic_rotate_fade"
+            case .XTranslation: return "ic_rotate_fade"
+            case .SplitSlideInHorizontal: return "ic_rotate_fade"
+            case .SplitSlideInOutHorizontal: return "ic_rotate_fade"
+            case .SplitSlideInVertical: return "ic_rotate_fade"
+            case .SplitSlideInOutVertical: return "ic_rotate_fade"
+            case .SplitSlideOutHorizontal: return "ic_rotate_fade"
+            case .SplitSlideOutVertical: return "ic_rotate_fade"
+            case .AngleSlice: return "ic_rotate_fade"
+            case .Bar: return "ic_rotate_fade"
+            case .BokehBlend: return "ic_rotate_fade"
+            case .CirclePinchWarp: return "ic_rotate_fade"
+            case .DiagonalGlitch: return "ic_rotate_fade"
+            case .DotTrans: return "ic_rotate_fade"
+            case .FireWipe: return "ic_rotate_fade"
+            case .GrowingSquares: return "ic_rotate_fade"
+            case .RandomSlide: return "ic_rotate_fade"
+            case .AlanRipple: return "ic_rotate_fade"
+            case .SideNoise: return "ic_rotate_fade"
+            case .DispCurious: return "ic_rotate_fade"
+            case .DispCurious1: return "ic_rotate_fade"
+            case .DispCurious2: return "ic_rotate_fade"
+            case .DispCurious3: return "ic_rotate_fade"
+            case .DispCurious4: return "ic_rotate_fade"
+            case .AtmospericZoom: return "ic_rotate_fade"
             }
         }
     }

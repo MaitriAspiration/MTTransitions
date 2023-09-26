@@ -13,7 +13,7 @@ class TransitionsPickerViewController: UIViewController {
 
     var selectionUpdated: ((MTTransition.Effect) -> Void)?
     
-    private var dataSource: [MTTransition.Effect] = MTTransition.Effect.allCases
+    private var dataSource: [MTTransition.Effect] = MTTransition.Effect.allCases.reversed()
     
     private var tableView: UITableView!
     

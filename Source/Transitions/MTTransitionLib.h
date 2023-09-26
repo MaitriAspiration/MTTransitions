@@ -12,6 +12,7 @@
 
 #define PI 3.141592653589
 #define M_PI   3.14159265358979323846
+#define _TWOPI 6.283185307179586476925286766559
 
 #include <metal_stdlib>
 #include "MTIShaderLib.h"

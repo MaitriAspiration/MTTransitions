@@ -182,6 +182,8 @@ public class MTMovieMaker: NSObject {
                     transition.imgName = "spiral-3"
                 } else if effects[index] == .Square {
                     transition.imgName = "square"
+                } else if effects[index] == .DispCurious {
+                    transition.imgName = "disp1"
                 }
 
                 let frameBeginTime = presentTime

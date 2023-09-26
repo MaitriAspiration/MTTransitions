@@ -22,13 +22,19 @@ class PickImageTransitionViewController: UIViewController {
     private var toImage: MTIImage!
     
     private var effect: MTTransition.Effect = .angular
-    
+    var displayTime:Double = 0.0
+    var videoDuration:Double = 0.0
+
+    var transition: MTTransition!
+    var timer: Timer?
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         view.backgroundColor = .white
         configureImages()
         configureSubviews()
+        transition = effect.transition
         doTransition()
     }
     
@@ -75,11 +81,44 @@ class PickImageTransitionViewController: UIViewController {
         ])
         
         pickButton.addTarget(self, action: #selector(handlePickButtonClicked), for: .touchUpInside)
+        startTimer()
     }
     
     private func doTransition() {
-        let transition = effect.transition
         transition.duration = 2.0
+        
+        if effect == .BiLinear {
+            transition.imgName = "bilinear-lateral"
+        } else if effect == .ConicalAsym {
+            transition.imgName = "conical-asym"
+        } else if effect == .ConicalSym {
+            transition.imgName = "conical-sym"
+        } else if effect == .LinearAawtoothLateral {
+            transition.imgName = "linear-sawtooth-lateral-4"
+        } else if effect == .RadialTriLateral {
+            transition.imgName = "radial-tri-lateral-4"
+        } else if effect == .RadialTriLateralReverse {
+            transition.imgName = "radial-tri-lateral-5"
+        } else if effect == .Spiral1 {
+            transition.imgName = "spiral-1"
+        } else if effect == .Spiral2 {
+            transition.imgName = "spiral-2"
+        } else if effect == .Spiral3 {
+            transition.imgName = "spiral-3"
+        } else if effect == .Square {
+            transition.imgName = "square"
+        } else if effect == .DispCurious {
+            transition.imgName = "disp"
+        } else if effect == .DispCurious1 {
+            transition.imgName = "disp1"
+        }  else if effect == .DispCurious2 {
+            transition.imgName = "disp2"
+        } else if effect == .DispCurious3 {
+            transition.imgName = "disp3"
+        } else if effect == .DispCurious4 {
+            transition.imgName = "disp4"
+        }
+
         transition.transition(from: fromImage, to: toImage, updater: { [weak self] image in
             self?.imageView.image = image
         }, completion: nil)
@@ -89,13 +128,38 @@ class PickImageTransitionViewController: UIViewController {
     }
     
     @objc private func handlePickButtonClicked() {
+        timer?.invalidate()
+        timer = nil
         let pickerVC = TransitionsPickerViewController()
         pickerVC.selectionUpdated = { [weak self] effect in
             guard let self = self else { return }
             self.effect = effect
+            self.transition = effect.transition
             self.doTransition()
+            self.startTimer()
         }
         let nav = UINavigationController(rootViewController: pickerVC)
         present(nav, animated: true, completion: nil)
+    }
+    
+    func startTimer() {
+        self.displayTime = 0.0
+        timer = Timer.scheduledTimer(timeInterval: 0.05, target: self, selector: #selector(self.timerValueUpdate), userInfo: nil, repeats: true)
+    }
+
+    @objc func timerValueUpdate() {
+        print(self.displayTime)
+        if self.displayTime >= 1 {
+            self.displayTime = 0
+            timer?.invalidate()
+            timer = nil
+        } else {
+            self.displayTime += (0.05/2.0)
+        }
+        self.transition?.timerFired(displayTime: self.displayTime, isStop: false)
+        if self.videoDuration > 2.0 {
+        } else {
+            self.videoDuration += (0.05)
+        }
     }
 }
