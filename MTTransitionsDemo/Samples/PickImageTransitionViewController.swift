@@ -117,7 +117,24 @@ class PickImageTransitionViewController: UIViewController {
             transition.imgName = "disp3"
         } else if effect == .DispCurious4 {
             transition.imgName = "disp4"
+        } else if effect == .DispCurious5 {
+            transition.imgName = "671-v7"
+        } else if effect == .DispCurious6 {
+            transition.imgName = "671-v6"
+        }  else if effect == .DispCurious7 {
+            transition.imgName = "671-v5"
+        } else if effect == .DispCurious8 {
+            transition.imgName = "671-v3"
+        } else if effect == .DispCurious9 {
+            transition.imgName = "671-v2"
+        } else if effect == .DispCurious10 {
+            transition.imgName = "3d-cnoise"
+        } else if effect == .DispCurious11 {
+            transition.imgName = "cellnoise-00"
+        } else if effect == .DispCurious12 {
+            transition.imgName = "triangle-making"//"rect-df"
         }
+
 
         transition.transition(from: fromImage, to: toImage, updater: { [weak self] image in
             self?.imageView.image = image

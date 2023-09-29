@@ -118,6 +118,7 @@ extension MTTransition {
         case rotateScaleVanishReverse
         case dissolve
         case XTranslation
+        case YTranslation
         case SplitSlideInHorizontal
         case SplitSlideInOutHorizontal
         case SplitSlideInVertical
@@ -140,7 +141,19 @@ extension MTTransition {
         case DispCurious2
         case DispCurious3
         case DispCurious4
-        case AtmospericZoom
+        case DispCurious5
+        case DispCurious6
+        case DispCurious7
+        case DispCurious8
+        case DispCurious9
+        case DispCurious10
+        case DispCurious11
+        case DispCurious12
+        case ZoomInOut
+        case bookFlip
+        case perlinSwipe
+        case chiasm
+        case honeyComb
 
         public var transition: MTTransition {
             switch self {
@@ -268,7 +281,20 @@ extension MTTransition {
             case .DispCurious2: return MTLumaTransition()
             case .DispCurious3: return MTLumaTransition()
             case .DispCurious4: return MTLumaTransition()
-            case .AtmospericZoom: return MTAtmospericZoomTransition()
+            case .ZoomInOut: return MTZoomInOutTransition()
+            case .bookFlip: return MTBookFlipTransition()
+            case .YTranslation: return MTYTranslationTransition()
+            case .DispCurious5: return MTLumaTransition()
+            case .DispCurious6: return MTLumaTransition()
+            case .DispCurious7: return MTLumaTransition()
+            case .DispCurious8: return MTLumaTransition()
+            case .DispCurious9: return MTLumaTransition()
+            case .DispCurious10: return MTLumaTransition()
+            case .DispCurious11: return MTLumaTransition()
+            case .DispCurious12: return MTLumaTransition()
+            case .perlinSwipe: return MTPerlinSwipeTransition()
+            case .chiasm: return MTChiasmTransition()
+            case .honeyComb: return MTHoneyCombTransition()
             }
         }
         
@@ -398,7 +424,20 @@ extension MTTransition {
             case .DispCurious2: return "DispCurious2"
             case .DispCurious3: return "DispCurious3"
             case .DispCurious4: return "DispCurious4"
-            case .AtmospericZoom: return "AtmospericZoom"
+            case .ZoomInOut: return "ZoomInOut"
+            case .bookFlip: return "bookFlip"
+            case .YTranslation: return "YTranslation"
+            case .DispCurious5: return "DispCurious5"
+            case .DispCurious6: return "DispCurious6"
+            case .DispCurious7: return "DispCurious7"
+            case .DispCurious8: return "DispCurious8"
+            case .DispCurious9: return "DispCurious9"
+            case .DispCurious10: return "DispCurious10"
+            case .DispCurious11: return "DispCurious11"
+            case .DispCurious12: return "DispCurious12"
+            case .perlinSwipe: return "perlinSwipe"
+            case .chiasm: return "chiasm"
+            case .honeyComb: return "honeyComb"
             }
         }
         
@@ -528,7 +567,20 @@ extension MTTransition {
             case .DispCurious2: return "ic_rotate_fade"
             case .DispCurious3: return "ic_rotate_fade"
             case .DispCurious4: return "ic_rotate_fade"
-            case .AtmospericZoom: return "ic_rotate_fade"
+            case .ZoomInOut: return "ic_rotate_fade"
+            case .bookFlip: return "ic_rotate_fade"
+            case .YTranslation: return "ic_rotate_fade"
+            case .DispCurious5: return "ic_rotate_fade"
+            case .DispCurious6: return "ic_rotate_fade"
+            case .DispCurious7: return "ic_rotate_fade"
+            case .DispCurious8: return "ic_rotate_fade"
+            case .DispCurious9: return "ic_rotate_fade"
+            case .DispCurious10: return "ic_rotate_fade"
+            case .DispCurious11: return "ic_rotate_fade"
+            case .DispCurious12: return "ic_rotate_fade"
+            case .perlinSwipe: return "ic_rotate_fade"
+            case .chiasm: return "ic_rotate_fade"
+            case .honeyComb: return "ic_rotate_fade"
             }
         }
     }

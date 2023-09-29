@@ -5,9 +5,9 @@
 //  Created by alexiscn on 2019/1/28.
 //
 
-public class MTAtmospericZoomTransition: MTTransition {
+public class MTZoomInOutTransition: MTTransition {
 
     override var fragmentName: String {
-        return "AtmospericZoomFragment"
+        return "ZoomInOutFragment"
     }
 }
