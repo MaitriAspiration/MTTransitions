@@ -134,7 +134,7 @@ class PickImageTransitionViewController: UIViewController {
         } else if effect == .DispCurious12 {
             transition.imgName = "triangle-making"//"rect-df"
         }
-
+ 
 
         transition.transition(from: fromImage, to: toImage, updater: { [weak self] image in
             self?.imageView.image = image
