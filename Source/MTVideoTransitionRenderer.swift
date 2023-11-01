@@ -53,6 +53,32 @@ public class MTVideoTransitionRenderer: NSObject {
             transition.imgName = "spiral-3"
         } else if effect == .Square {
             transition.imgName = "square"
+        }  else if effect == .DispCurious {
+            transition.imgName = "disp"
+        } else if effect == .DispCurious1 {
+            transition.imgName = "disp1"
+        }  else if effect == .DispCurious2 {
+            transition.imgName = "disp2"
+        } else if effect == .DispCurious3 {
+            transition.imgName = "disp3"
+        } else if effect == .DispCurious4 {
+            transition.imgName = "disp4"
+        } else if effect == .DispCurious5 {
+            transition.imgName = "671-v7"
+        } else if effect == .DispCurious6 {
+            transition.imgName = "671-v6"
+        }  else if effect == .DispCurious7 {
+            transition.imgName = "671-v5"
+        } else if effect == .DispCurious8 {
+            transition.imgName = "671-v3"
+        } else if effect == .DispCurious9 {
+            transition.imgName = "671-v2"
+        } else if effect == .DispCurious10 {
+            transition.imgName = "3d-cnoise"
+        } else if effect == .DispCurious11 {
+            transition.imgName = "cellnoise-00"
+        } else if effect == .DispCurious12 {
+            transition.imgName = "triangle-making"//"rect-df"
         }
 
         if let output = transition.outputImage {

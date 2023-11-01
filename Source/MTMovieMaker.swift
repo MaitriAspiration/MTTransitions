@@ -184,6 +184,30 @@ public class MTMovieMaker: NSObject {
                     transition.imgName = "square"
                 } else if effects[index] == .DispCurious {
                     transition.imgName = "disp1"
+                }  else if effects[index] == .DispCurious1 {
+                    transition.imgName = "disp1"
+                }  else if effects[index] == .DispCurious2 {
+                    transition.imgName = "disp2"
+                } else if effects[index] == .DispCurious3 {
+                    transition.imgName = "disp3"
+                } else if effects[index] == .DispCurious4 {
+                    transition.imgName = "disp4"
+                } else if effects[index] == .DispCurious5 {
+                    transition.imgName = "671-v7"
+                } else if effects[index] == .DispCurious6 {
+                    transition.imgName = "671-v6"
+                }  else if effects[index] == .DispCurious7 {
+                    transition.imgName = "671-v5"
+                } else if effects[index] == .DispCurious8 {
+                    transition.imgName = "671-v3"
+                } else if effects[index] == .DispCurious9 {
+                    transition.imgName = "671-v2"
+                } else if effects[index] == .DispCurious10 {
+                    transition.imgName = "3d-cnoise"
+                } else if effects[index] == .DispCurious11 {
+                    transition.imgName = "cellnoise-00"
+                } else if effects[index] == .DispCurious12 {
+                    transition.imgName = "triangle-making"//"rect-df"
                 }
 
                 let frameBeginTime = presentTime
